@@ -55,6 +55,11 @@ A EBT component that only takes care of EBT replication for a given
 subset of feeds. Could start with
 [simple-ebt](https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js).
 
+### SSB same-as
+
+Inteprets the same-as feeds and presents and interface to query
+this. We have to think how this relates to ssb-friends.
+
 ### ssb-friends
 
 SSB friends has been untangled from ssb-replicate and should be run in
