@@ -44,6 +44,11 @@ This module needs some kind of status to see what it is doing.
 One starting point for this module would be
 [feed-syncer](https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js).
 
+### SSB network fixture
+
+Similar to [ssb-fixtures] we need a module where we can play with
+different network setups. This should work as an end-to-end test.
+
 ### Fixed ssb-ebt
 
 A EBT component that only takes care of EBT replication for a given
@@ -59,3 +64,4 @@ that mode.
 [ssb-secure-partial-replication]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication
 [ssb-subset-replication]: https://github.com/ssb-ngi-pointer/ssb-subset-replication
 [trustnet]: https://github.com/cblgh/trustnet
+[ssb-fixtures]: https://github.com/ssb-ngi-pointer/ssb-fixtures/
