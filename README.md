@@ -8,7 +8,8 @@ stack.
 
 ### Trustnet
 
-The general [trustnet] algorithm for liquid democrazy style trust delegation
+The general [trustnet] algorithm for liquid democrazy style trust
+delegation
 
 ### Claims writer
 
@@ -20,7 +21,9 @@ configured.
 
 A component responsible for validating claims. Uses trustnet and by
 default should create audits for claims with less than 3 existing
-audits within hops 2.
+audits within hops 2. One interesting problem will be to make sure
+that no peers in the network will end up with a too large portion of
+the audits.
 
 ### Subset replication
 
