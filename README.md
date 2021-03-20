@@ -61,8 +61,8 @@ subset of feeds. Could start with
 ### Linked identity
 
 Module that interprets the linkedidentity purpose feeds and presents
-an interface to query this. We probably should use box2 for private
-messages to these identities.
+an interface to query this. We probably should use [box2 DM] for
+private messages to these identities.
 
 ### ssb-friends
 
@@ -74,3 +74,4 @@ that mode.
 [ssb-subset-replication]: https://github.com/ssb-ngi-pointer/ssb-subset-replication
 [trustnet]: https://github.com/cblgh/trustnet
 [ssb-fixtures]: https://github.com/ssb-ngi-pointer/ssb-fixtures/
+[box2 DM]: https://github.com/ssbc/private-group-spec/blob/master/direct-messages/README.md
