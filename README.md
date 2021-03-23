@@ -6,24 +6,9 @@ stack.
 
 ## Components
 
-### Trustnet
+### Index writer
 
-The general [trustnet] algorithm for liquid democrazy style trust
-delegation
-
-### Claims writer
-
-A component responsible for writing claims to the meta feed. By
-default it should just write claims for its own main feed when
-configured.
-
-### Claims auditor
-
-A component responsible for validating claims. Uses trustnet and by
-default should create audits for claims with less than 3 existing
-audits within hops 2. One interesting problem will be to make sure
-that no peers in the network will end up with a too large portion of
-the audits.
+A component responsible for writing and updating the index feeds.
 
 ### Subset replication
 
@@ -58,17 +43,35 @@ A EBT component that only takes care of EBT replication for a given
 subset of feeds. Could start with
 [simple-ebt](https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js).
 
-### Linked identity
+### Feedless identity
 
-Module that interprets the linkedidentity purpose feeds and presents
-an interface to query this. We probably should use [box2 DM] for
-private messages to these identities.
+Module that interprets the feedless identity purpose feeds and
+presents an interface to query this. We probably should use [box2 DM]
+for private messages to these identities.
 
 ### ssb-friends
 
 SSB friends has been untangled from ssb-replicate and should be run in
 that mode.
 
+### Trustnet
+
+The general [trustnet] algorithm for liquid democrazy style trust
+delegation
+
+### Claims writer
+
+A component responsible for writing claims to the meta feed. By
+default it should just write claims for its own main feed when
+configured.
+
+### Claims auditor
+
+A component responsible for validating claims. Uses trustnet and by
+default should create audits for claims with less than 3 existing
+audits within hops 2. One interesting problem will be to make sure
+that no peers in the network will end up with a too large portion of
+the audits.
 
 [ssb-secure-partial-replication]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication
 [ssb-subset-replication]: https://github.com/ssb-ngi-pointer/ssb-subset-replication
