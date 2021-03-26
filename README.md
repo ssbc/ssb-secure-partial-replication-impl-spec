@@ -6,9 +6,21 @@ stack.
 
 ## Components
 
+### Meta feed
+
+A component for:
+ - locally managing your meta feeds including create, seed values etc.
+ - the ability to reason about feeds of another identity and to use
+   that for replication
+
 ### Index writer
 
 A component responsible for writing and updating the index feeds.
+
+### SSB network fixture
+
+Similar to [ssb-fixtures] we need a module where we can play with
+different network setups. This should work as an end-to-end test.
 
 ### Subset replication
 
@@ -32,27 +44,22 @@ This module needs some kind of status to see what it is doing.
 One starting point for this module would be
 [feed-syncer](https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js).
 
-### SSB network fixture
-
-Similar to [ssb-fixtures] we need a module where we can play with
-different network setups. This should work as an end-to-end test.
-
-### Fixed ssb-ebt
+### Fixed SSB-ebt
 
 A EBT component that only takes care of EBT replication for a given
 subset of feeds. Could start with
 [simple-ebt](https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js).
+
+### SSB-friends
+
+SSB friends has been untangled from ssb-replicate and should be run in
+that mode.
 
 ### Feedless identity
 
 Module that interprets the feedless identity purpose feeds and
 presents an interface to query this. We probably should use [box2 DM]
 for private messages to these identities.
-
-### ssb-friends
-
-SSB friends has been untangled from ssb-replicate and should be run in
-that mode.
 
 ### Trustnet
 
