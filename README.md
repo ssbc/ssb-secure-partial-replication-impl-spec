@@ -30,18 +30,21 @@ createhistorystream. The set replication part is still undecided.
 ### SSB feed replicator
 
 The purpose of this module is to figure out how to replicate a
-specific feed, by taking into account: claims, available replication
-posibilties of remote peers (EBT, history stream, subset replication)
-and local configuration choices.
+specific identity, by taking into account: meta feed support
+(indexes), claims, available replication posibilties of remote peers
+(EBT, history stream, subset replication) and local configuration
+choices.
 
 Local configuration could include things like: 
  - what hops to always do full replication
  - what hops to never do full replication even if partial replication
    is not available
    
-This module needs some kind of status to see what it is doing.
-
-One starting point for this module would be
+This module needs some kind of status to see what it is doing. The
+good thing about indexes is that it is natural points that has a
+linear seq like old feeds and this means that we don't need to store
+extra state like the potential browser-core starting point for this
+module
 [feed-syncer](https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js).
 
 ### Fixed SSB-ebt
