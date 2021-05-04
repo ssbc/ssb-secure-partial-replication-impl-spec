@@ -17,15 +17,10 @@ A component for:
 
 A component responsible for writing and updating the index feeds.
 
-### SSB network fixture
+### SSB network fixture (Alex is working on this)
 
 Similar to [ssb-fixtures] we need a module where we can play with
 different network setups. This should work as an end-to-end test.
-
-### Subset replication
-
-[ssb-subset-replication] will become a more general
-createhistorystream. The set replication part is still undecided.
 
 ### SSB feed replicator
 
@@ -58,11 +53,17 @@ subset of feeds. Could start with
 SSB friends has been untangled from ssb-replicate and should be run in
 that mode.
 
-### Feedless identity
+### Feedless/fusion identity
+
+See this repo: https://github.com/ssb-ngi-pointer/fusion-identity-spec
 
 Module that interprets the feedless identity purpose feeds and
 presents an interface to query this. We probably should use [box2 DM]
 for private messages to these identities.
+
+### Subset replication
+
+[ssb-subset-replication] as a more general createhistorystream.
 
 ### Trustnet
 
@@ -82,6 +83,16 @@ default should create audits for claims with less than 3 existing
 audits within hops 2. One interesting problem will be to make sure
 that no peers in the network will end up with a too large portion of
 the audits.
+
+### Set replication
+
+Implement the protocol described in https://hackmd.io/mPmWbNaDR9-AfrM1mSYtHQ
+
+Maybe start with a simplified version
+
+Related work:
+ -Auto merge set replication: https://github.com/automerge/automerge/blob/c0376c0d9f0bdd6d8445edb34c68e2abe4bdf3fd/backend/sync.js
+
 
 [ssb-secure-partial-replication]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication
 [ssb-subset-replication]: https://github.com/ssb-ngi-pointer/ssb-subset-replication
