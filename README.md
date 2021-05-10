@@ -13,14 +13,18 @@ A component for:
  - the ability to reason about feeds of another identity and to use
    that for replication
 
+Implementation of spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
+JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
+
 ### Index writer
 
 A component responsible for writing and updating the index feeds.
 
-### SSB network fixture (Alex is working on this)
+### Netsim
 
-Similar to [ssb-fixtures] we need a module where we can play with
-different network setups. This should work as an end-to-end test.
+A network simulator that supports JS & go nodes
+
+https://github.com/ssb-ngi-pointer/netsim
 
 ### SSB feed replicator
 
@@ -42,6 +46,17 @@ extra state like the potential browser-core starting point for this
 module
 [feed-syncer](https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js).
 
+```
+initial sync:
+
+get own messages
+for feeds in hops 1: get feeds in full
+for feeds in hops 2:
+ - get metafeed/announce messages
+ - for those that have, get metafeed (hydrate), then get index feeds (hydrate),
+   if exists then we can do partial
+```
+
 ### Fixed SSB-ebt
 
 A EBT component that only takes care of EBT replication for a given
@@ -55,7 +70,7 @@ that mode.
 
 ### Feedless/fusion identity
 
-See this repo: https://github.com/ssb-ngi-pointer/fusion-identity-spec
+Repo: https://github.com/ssb-ngi-pointer/fusion-identity-spec
 
 Module that interprets the feedless identity purpose feeds and
 presents an interface to query this. We probably should use [box2 DM]
@@ -64,6 +79,9 @@ for private messages to these identities.
 ### Subset replication
 
 [ssb-subset-replication] as a more general createhistorystream.
+
+This might be quite important for getting metafeed/announce messages
+of feeds in hops 2 in a fast way.
 
 ### Trustnet
 
