@@ -59,7 +59,7 @@ for feeds in hops 2:
    if exists then we can do partial
 ```
 
-### subset query
+### Subset query
 
 Implement the subset RPC method described in
 https://github.com/ssb-ngi-pointer/ssb-subset-replication#subsetquery-options-source
