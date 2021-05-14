@@ -13,8 +13,8 @@ A component for:
  - the ability to reason about feeds of another identity and to use
    that for replication
 
-Including a RPC for getting the meta feed messages of one or more
-feeds.
+Including a RPC for getting the meta feed announce messages of one or
+more feeds.
 
 Implementation of spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
@@ -25,8 +25,8 @@ A component responsible for writing and updating the index feeds.
 
 See https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
 
-Including a RPC method to efficiently get an index feed including the
-linked messages.
+Including a RPC method for efficiently getting an index feed including
+the linked messages.
 
 ### Netsim
 
