@@ -16,23 +16,19 @@ A component for:
 Including a RPC for getting the meta feed announce messages of one or
 more feeds.
 
-Implementation of spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
-JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
+- Spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
+- JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 
 ### Index writer
 
-A component responsible for writing and updating the index feeds.
-
-See https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
+A component responsible for writing and updating the [index feeds].
 
 Including a RPC method for efficiently getting an index feed including
 the linked messages.
 
 ### Netsim
 
-A network simulator that supports JS & go nodes
-
-https://github.com/ssb-ngi-pointer/netsim
+A [network simulator] that supports JS & go nodes.
 
 ### SSB feed replicator
 
@@ -51,8 +47,7 @@ This module needs some kind of status to see what it is doing. The
 good thing about indexes is that it is natural points that has a
 linear seq like old feeds and this means that we don't need to store
 extra state like the potential browser-core starting point for this
-module
-[feed-syncer](https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js).
+module [feed-syncer].
 
 ```
 initial sync:
@@ -68,28 +63,22 @@ for feeds in hops 2:
 ### Fixed SSB-ebt
 
 A EBT component that only takes care of EBT replication for a given
-subset of feeds. Could start with
-[simple-ebt](https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js).
+subset of feeds. Could start with [simple-ebt].
 
 ### SSB-friends
 
 SSB friends has been untangled from ssb-replicate and should be run in
 that mode.
 
-### Feedless/fusion identity
+### Fusion identity
 
-Repo: https://github.com/ssb-ngi-pointer/fusion-identity-spec
+[fusion identity spec]
 
-Module that interprets the feedless identity purpose feeds and
-presents an interface to query this. We probably should use [box2 DM]
-for private messages to these identities.
-
-### Subset replication
-
-[ssb-subset-replication] as a more general createhistorystream.
-
-This might be quite important for getting metafeed/announce messages
-of feeds in hops 2 in a fast way.
+A component for:
+ - Doing operations on identities including inviting, attestation etc.
+ - Query methods for the state
+ 
+Changes to db2 to support [box2 DM] private messages.
 
 ### Trustnet
 
@@ -125,3 +114,9 @@ Related work:
 [trustnet]: https://github.com/cblgh/trustnet
 [ssb-fixtures]: https://github.com/ssb-ngi-pointer/ssb-fixtures/
 [box2 DM]: https://github.com/ssbc/private-group-spec/blob/master/direct-messages/README.md
+[fusion identity spec]: https://github.com/ssb-ngi-pointer/fusion-identity-spec
+[network simulator]: https://github.com/ssb-ngi-pointer/netsim
+[index feeds]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
+
+[simple-ebt]: https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js
+[feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js
