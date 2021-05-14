@@ -13,6 +13,9 @@ A component for:
  - the ability to reason about feeds of another identity and to use
    that for replication
 
+Including a RPC for getting the meta feed messages of one or more
+feeds.
+
 Implementation of spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 
@@ -21,6 +24,9 @@ JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 A component responsible for writing and updating the index feeds.
 
 See https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
+
+Including a RPC method to efficiently get an index feed including the
+linked messages.
 
 ### Netsim
 
@@ -58,11 +64,6 @@ for feeds in hops 2:
  - for those that have, get metafeed (hydrate), then get index feeds (hydrate),
    if exists then we can do partial
 ```
-
-### Subset query
-
-Implement the subset RPC method described in
-https://github.com/ssb-ngi-pointer/ssb-subset-replication#subsetquery-options-source
 
 ### Fixed SSB-ebt
 
