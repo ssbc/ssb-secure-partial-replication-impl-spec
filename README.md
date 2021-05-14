@@ -83,15 +83,15 @@ Changes to db2 to support [box2 DM] private messages.
 ### Trustnet
 
 The general [trustnet] algorithm for liquid democrazy style trust
-delegation
+delegation.
 
-### Claims writer
+#### Claims writer
 
 A component responsible for writing claims to the meta feed. By
 default it should just write claims for its own main feed when
 configured.
 
-### Claims auditor
+#### Claims auditor
 
 A component responsible for validating claims. Uses trustnet and by
 default should create audits for claims with less than 3 existing
@@ -106,7 +106,7 @@ Implement the protocol described in https://hackmd.io/mPmWbNaDR9-AfrM1mSYtHQ
 Maybe start with a simplified version
 
 Related work:
- -Auto merge set replication: https://github.com/automerge/automerge/blob/c0376c0d9f0bdd6d8445edb34c68e2abe4bdf3fd/backend/sync.js
+ - [Automerge set replication]
 
 
 [ssb-secure-partial-replication]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication
@@ -117,6 +117,7 @@ Related work:
 [fusion identity spec]: https://github.com/ssb-ngi-pointer/fusion-identity-spec
 [network simulator]: https://github.com/ssb-ngi-pointer/netsim
 [index feeds]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
+[Automerge set replication]: https://github.com/automerge/automerge/blob/c0376c0d9f0bdd6d8445edb34c68e2abe4bdf3fd/backend/sync.js
 
 [simple-ebt]: https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js
 [feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js
