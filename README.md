@@ -23,8 +23,8 @@ more feeds.
 
 A component responsible for writing and updating the [index feeds].
 
-Including a RPC method for efficiently getting an index feed including
-the linked messages.
+Including a [getIndexFeed] RPC method for efficiently getting an index
+feed including the linked messages.
 
 ### Netsim
 
@@ -55,10 +55,14 @@ initial sync:
 get own messages
 for feeds in hops 1: get feeds in full
 for feeds in hops 2:
- - get metafeed/announce messages
+ - get metafeed/announce messages using [getSubset] RPC
  - for those that have, get metafeed (hydrate), then get index feeds (hydrate),
    if exists then we can do partial
 ```
+
+### subset RPC
+
+Implementation of [getSubset] needed for getting meta feed announcements
 
 ### Fixed SSB-ebt
 
@@ -118,6 +122,8 @@ Related work:
 [network simulator]: https://github.com/ssb-ngi-pointer/netsim
 [index feeds]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication#indexes
 [Automerge set replication]: https://github.com/automerge/automerge/blob/c0376c0d9f0bdd6d8445edb34c68e2abe4bdf3fd/backend/sync.js
+[getindexfeed]: https://github.com/ssb-ngi-pointer/ssb-subset-replication#getindexfeedfeedid-source
+[getSubset]: https://github.com/ssb-ngi-pointer/ssb-subset-replication#getsubsetquery-options-source
 
 [simple-ebt]: https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js
 [feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js
