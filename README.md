@@ -13,8 +13,8 @@ A component for:
  - the ability to reason about feeds of another identity and to use
    that for replication
 
-Including a RPC for getting the meta feed announce messages of one or
-more feeds.
+Including the [getSubset] RPC for getting the meta feed announce
+messages of one or more feeds.
 
 - Spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 - JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
@@ -59,10 +59,6 @@ for feeds in hops 2:
  - for those that have, get metafeed (hydrate), then get index feeds (hydrate),
    if exists then we can do partial
 ```
-
-### subset RPC
-
-Implementation of [getSubset] needed for getting meta feed announcements
 
 ### Fixed SSB-ebt
 
