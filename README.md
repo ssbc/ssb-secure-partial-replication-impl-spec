@@ -13,6 +13,7 @@ A component for:
  - the ability to reason about feeds of another identity and to use
    that for replication
 
+Links:
 - [ssb-meta-feeds-spec]
 - JS implementation: [ssb-meta-feeds]
 - Subset replication for getting the meta feed announce messages of
