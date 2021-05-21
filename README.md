@@ -6,25 +6,30 @@ stack.
 
 ## Components
 
-### Meta feed
+### Meta feeds
 
 A component for:
  - locally managing your meta feeds including create, seed values etc.
  - the ability to reason about feeds of another identity and to use
    that for replication
 
-Including the [getSubset] RPC for getting the meta feed announce
-messages of one or more feeds.
-
-- Spec: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
-- JS implementation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
+- [ssb-meta-feeds-spec]
+- JS implementation: [ssb-meta-feeds]
+- Subset replication for getting the meta feed announce messages of
+one or more feeds: [ssb-meta-feeds-rpc]
 
 ### Index writer
 
 A component responsible for writing and updating the [index feeds].
 
-Including a [getIndexFeed] RPC method for efficiently getting an index
-feed including the linked messages.
+[getIndexFeed] RPC method for efficiently getting an index feed
+including the linked messages: [ssb-meta-feeds-rpc]
+
+### Meta feeds integration into db2
+
+- Auto load meta feeds state + keys
+- Publish to a meta feed
+- Some kind of list functionality?
 
 ### Netsim
 
@@ -123,3 +128,6 @@ Related work:
 
 [simple-ebt]: https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js
 [feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js
+[ssb-meta-feeds-spec]: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
+[ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
+[ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
