@@ -26,6 +26,13 @@ A component responsible for writing and updating the [index feeds].
 [getIndexFeed] RPC method for efficiently getting an index feed
 including the linked messages: [ssb-meta-feeds-rpc]
 
+### Meta feeds feed format
+
+- Implementaiton of spec: [bipfy badger]
+- Validation module
+- Transformer (in/out) for db2 to make it fit with existing format
+- Take care of [this](https://github.com/ssbc/bipf#cannonicisity) in bipf
+
 ### Meta feeds integration into db2
 
 - Auto load meta feeds state + keys
@@ -132,3 +139,4 @@ Related work:
 [ssb-meta-feeds-spec]: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 [ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 [ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
+[bipfy-badger]: https://github.com/ssb-ngi-pointer/bipfy-badger-spec
