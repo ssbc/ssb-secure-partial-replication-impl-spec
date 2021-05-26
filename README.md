@@ -98,11 +98,10 @@ Changes to db2 to support [box2 DM] private messages.
 The general [trustnet] algorithm for liquid democrazy style trust
 delegation.
 
-#### Claims writer
+#### Claims
 
-A component responsible for writing claims to the meta feed. By
-default it should just write claims for its own main feed when
-configured.
+Indexing of data in other meta feeds. Should use the same index writer
+and RPC as indexes for replication.
 
 #### Claims auditor
 
