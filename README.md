@@ -28,16 +28,17 @@ including the linked messages: [ssb-meta-feeds-rpc]
 
 ### Meta feeds feed format
 
-- Implementaiton of spec: [bipfy badger]
+- Implementaiton of feed format: [ssb-meta-feeds-feed-format]
 - Validation module
 - Transformer (in/out) for db2 to make it fit with existing format
-- Take care of [this](https://github.com/ssbc/bipf#cannonicisity) in bipf
 
 ### Meta feeds integration into db2
 
 - Auto load meta feeds state + keys
 - Publish to a meta feed
 - Some kind of list functionality?
+
+WIP branch: https://github.com/ssb-ngi-pointer/ssb-db2/tree/metafeeds
 
 ### Netsim
 
@@ -138,4 +139,4 @@ Related work:
 [ssb-meta-feeds-spec]: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 [ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 [ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
-[bipfy-badger]: https://github.com/ssb-ngi-pointer/bipfy-badger-spec
+[ssb-meta-feeds-feed-format]: https://github.com/ssb-ngi-pointer/bipfy-badger-spec
