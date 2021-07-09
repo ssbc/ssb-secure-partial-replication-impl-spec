@@ -19,30 +19,17 @@ Links:
 - Subset replication for getting the meta feed announce messages of
 one or more feeds: [ssb-meta-feeds-rpc]
 
+### Bendy butt
+
+- Implementaiton of feed format: [ssb-bendy-butt]
+- db2 support: https://github.com/ssb-ngi-pointer/ssb-db2/pull/231
+
 ### Index writer
 
 A component responsible for writing and updating the [index feeds].
 
 [getIndexFeed] RPC method for efficiently getting an index feed
 including the linked messages: [ssb-meta-feeds-rpc]
-
-### Meta feeds feed format
-
-- Implementaiton of feed format: [ssb-meta-feeds-feed-format]
-- Validation module
-- Transformer (in/out) for db2 to make it fit with existing format
-
-### Meta feeds integration into db2
-
-- Auto load meta feeds state + keys
-- Publish to a meta feed
-- Some kind of list functionality?
-
-WIP branch: https://github.com/ssb-ngi-pointer/ssb-db2/tree/metafeeds
-
-### Netsim
-
-A [network simulator] that supports JS & go nodes.
 
 ### SSB feed replicator
 
@@ -74,16 +61,6 @@ for feeds in hops 2:
    if exists then we can do partial
 ```
 
-### Fixed SSB-ebt
-
-A EBT component that only takes care of EBT replication for a given
-subset of feeds. Could start with [simple-ebt].
-
-### SSB-friends
-
-SSB friends has been untangled from ssb-replicate and should be run in
-that mode.
-
 ### Fusion identity
 
 [fusion identity spec]
@@ -91,8 +68,8 @@ that mode.
 A component for:
  - Doing operations on identities including inviting, attestation etc.
  - Query methods for the state
- 
-Changes to db2 to support [box2 DM] private messages.
+
+Should probably be written using https://github.com/arj03/ssb-crut/
 
 ### Trustnet
 
@@ -121,6 +98,21 @@ Maybe start with a simplified version
 Related work:
  - [Automerge set replication]
 
+## DONE
+
+### Netsim
+
+A [network simulator] that supports JS & go nodes.
+
+### Fixed SSB-ebt
+
+A EBT component that only takes care of EBT replication for a given
+subset of feeds. Could start with [simple-ebt].
+
+### SSB-friends
+
+SSB friends has been untangled from ssb-replicate and should be run in
+that mode.
 
 [ssb-secure-partial-replication]: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication
 [ssb-subset-replication]: https://github.com/ssb-ngi-pointer/ssb-subset-replication
@@ -139,4 +131,4 @@ Related work:
 [ssb-meta-feeds-spec]: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 [ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 [ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
-[ssb-meta-feeds-feed-format]: https://github.com/ssb-ngi-pointer/bipfy-badger-spec
+[ssb-bendy-butt]: https://github.com/ssb-ngi-pointer/ssb-bendy-butt
