@@ -1,4 +1,4 @@
-# SSB secure partial replication implementation notes
+# SSB-JS partial replication implementation notes
 
 This document consists of loose thoughts about how to structure an
 implementation of [ssb-secure-partial-replication] in the JavaScript
@@ -119,7 +119,7 @@ that mode.
 [getSubset]: https://github.com/ssb-ngi-pointer/ssb-subset-replication#getsubsetquery-options-source
 
 [simple-ebt]: https://github.com/arj03/ssb-browser-core/blob/master/simple-ebt.js
-[feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-syncer.js
+[feed-syncer]: https://github.com/arj03/ssb-browser-core/blob/master/feed-replication.js
 [ssb-meta-feeds-spec]: https://github.com/ssb-ngi-pointer/ssb-meta-feed-spec
 [ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 [ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
