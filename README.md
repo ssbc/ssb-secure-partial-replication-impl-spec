@@ -79,9 +79,8 @@ Should probably be written using ssb-crut:
 
 ### Set replication (Stretch goal)
 
-Implement the protocol described in https://hackmd.io/mPmWbNaDR9-AfrM1mSYtHQ
-
-Maybe start with a simplified version
+Implement the protocol described in Aljoscha's master thesis. Maybe
+start with a simplified version
 
 Related work:
  - [Automerge set replication]
