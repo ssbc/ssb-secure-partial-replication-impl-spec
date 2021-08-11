@@ -9,35 +9,33 @@ stack.
 ### Meta feeds
 
 A component for:
- - locally managing your meta feeds including create, seed values etc.
- - the ability to reason about feeds of another identity and to use
-   that for replication
+ - locally managing your meta feeds including create, query seed etc.
 
 Links:
-- [ssb-meta-feeds-spec]
-- JS implementation: [ssb-meta-feeds]
+- spec: [ssb-meta-feeds-spec]
+- implementation: [ssb-meta-feeds]
 - Subset replication for getting the meta feed announce messages of
 one or more feeds: [ssb-meta-feeds-rpc]
 
 ### Bendy butt
 
-- Implementaiton of feed format: [ssb-bendy-butt]
-- db2 support: https://github.com/ssb-ngi-pointer/ssb-db2/pull/231
+- Implementation: [ssb-bendy-butt]
+- db2 support:
+  - base: https://github.com/ssb-ngi-pointer/ssb-db2/pull/241
+  - encryption: https://github.com/ssb-ngi-pointer/ssb-db2/pull/231
 
 ### Index writer
 
 A component responsible for writing and updating the [index feeds].
 
-[getIndexFeed] RPC method for efficiently getting an index feed
-including the linked messages: [ssb-meta-feeds-rpc]
+Implementation: [ssb-index-feed-writer]
 
-### SSB feed replicator
+### Feed replicator
 
-The purpose of this module is to figure out how to replicate a
-specific identity, by taking into account: meta feed support
-(indexes), claims, available replication posibilties of remote peers
-(EBT, history stream, subset replication) and local configuration
-choices.
+The purpose of this module is to do enable replication based on:
+friends, meta feed support (indexes), available replication
+posibilties of remote peers (EBT, subset replication, history stream?,
+) and local configuration choices.
 
 Local configuration could include things like: 
  - what hops to always do full replication
@@ -50,18 +48,24 @@ linear seq like old feeds and this means that we don't need to store
 extra state like the potential browser-core starting point for this
 module [feed-syncer].
 
-```
-initial sync:
+Under here we also need to handle bendy butt over EBT (another EBT
+instance as this is binary) and [getIndexFeed] RPC method for
+efficiently getting an index feed including the linked messages:
+[ssb-meta-feeds-rpc].
 
-get own messages
-for feeds in hops 1: get feeds in full
-for feeds in hops 2:
- - get metafeed/announce messages using [getSubset] RPC
- - for those that have, get metafeed (hydrate), then get index feeds (hydrate),
-   if exists then we can do partial
-```
+### Netsim tests
 
-### Fusion identity
+We should be able to use netsim to test all of this new stuff against
+the existing and between implementations (go, js). Probably start with
+a base case of ~100 peers and 100k messages and test: 10, 30, 90% meta
+feeds.
+
+### Example app
+
+- meta feeds explorer
+- browser demo (codename 8K)
+
+### Fusion identity (Stretch goal)
 
 [fusion identity spec]
 
@@ -69,27 +73,11 @@ A component for:
  - Doing operations on identities including inviting, attestation etc.
  - Query methods for the state
 
-Should probably be written using https://github.com/arj03/ssb-crut/
+Should probably be written using ssb-crut:
 
-### Trustnet
+- https://gitlab.com/ahau/ssb-crut/-/tree/db2
 
-The general [trustnet] algorithm for liquid democrazy style trust
-delegation.
-
-#### Claims
-
-Indexing of data in other meta feeds. Should use the same index writer
-and RPC as indexes for replication.
-
-#### Claims auditor
-
-A component responsible for validating claims. Uses trustnet and by
-default should create audits for claims with less than 3 existing
-audits within hops 2. One interesting problem will be to make sure
-that no peers in the network will end up with a too large portion of
-the audits.
-
-### Set replication
+### Set replication (Stretch goal)
 
 Implement the protocol described in https://hackmd.io/mPmWbNaDR9-AfrM1mSYtHQ
 
@@ -97,6 +85,10 @@ Maybe start with a simplified version
 
 Related work:
  - [Automerge set replication]
+
+### Network identity? (Stretch goal)
+
+Maybe: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication-spec/pull/5#issuecomment-892221314
 
 ## DONE
 
@@ -132,3 +124,4 @@ that mode.
 [ssb-meta-feeds]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds
 [ssb-meta-feeds-rpc]: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc
 [ssb-bendy-butt]: https://github.com/ssb-ngi-pointer/ssb-bendy-butt
+[ssb-index-feed-writer]: https://github.com/ssb-ngi-pointer/ssb-index-feed-writer
