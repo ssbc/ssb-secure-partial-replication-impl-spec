@@ -24,12 +24,6 @@ one or more feeds: [ssb-meta-feeds-rpc]
   - base: https://github.com/ssb-ngi-pointer/ssb-db2/pull/241
   - encryption: https://github.com/ssb-ngi-pointer/ssb-db2/pull/231
 
-### Index writer
-
-A component responsible for writing and updating the [index feeds].
-
-Implementation: [ssb-index-feed-writer]
-
 ### Feed replicator
 
 The purpose of this module is to do enable replication based on:
@@ -90,6 +84,12 @@ Related work:
 Maybe: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication-spec/pull/5#issuecomment-892221314
 
 ## DONE
+
+### Index writer
+
+A component responsible for writing and updating the [index feeds].
+
+Implementation: [ssb-index-feed-writer]
 
 ### Netsim
 
