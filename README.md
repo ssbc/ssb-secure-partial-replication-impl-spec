@@ -13,6 +13,7 @@ stack.
 
 - validation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds/pull/18
 - random test failures: https://github.com/ssb-ngi-pointer/ssb-meta-feeds/issues/19
+- box2 support https://github.com/ssb-ngi-pointer/ssb-meta-feeds/pull/25
 
 ### Bendy butt / DB2
 
