@@ -8,44 +8,30 @@ stack.
 
 ### Meta feeds
 
-A component for:
- - locally managing your meta feeds including create, query seed etc.
-
-Links:
 - spec: [ssb-meta-feeds-spec]
 - implementation: [ssb-meta-feeds]
-- Subset replication for getting the meta feed announce messages of
-one or more feeds: [ssb-meta-feeds-rpc]
 
-### Bendy butt
+- validation: https://github.com/ssb-ngi-pointer/ssb-meta-feeds/pull/18
+- random test failures: https://github.com/ssb-ngi-pointer/ssb-meta-feeds/issues/19
+
+### Bendy butt / DB2
 
 - Implementation: [ssb-bendy-butt]
+
 - db2 support:
-  - base: https://github.com/ssb-ngi-pointer/ssb-db2/pull/241
-  - encryption: https://github.com/ssb-ngi-pointer/ssb-db2/pull/231
+  - base: https://github.com/ssb-ngi-pointer/ssb-db2/pull/252
+  - encryption: https://github.com/ssb-ngi-pointer/ssb-db2/pull/253
+
+### RPC/EBT changes
+
+- EBT changes: multiple streams & getClock:
+  https://github.com/cryptoscope/ssb/pull/111
+- Remove resolvedIndexFeed: [ssb-meta-feeds-rpc]
+- type attack: https://github.com/ssb-ngi-pointer/ssb-meta-feeds-rpc/issues/9
 
 ### Feed replicator
 
-The purpose of this module is to do enable replication based on:
-friends, meta feed support (indexes), available replication
-posibilties of remote peers (EBT, subset replication, history stream?,
-) and local configuration choices.
-
-Local configuration could include things like: 
- - what hops to always do full replication
- - what hops to never do full replication even if partial replication
-   is not available
-   
-This module needs some kind of status to see what it is doing. The
-good thing about indexes is that it is natural points that has a
-linear seq like old feeds and this means that we don't need to store
-extra state like the potential browser-core starting point for this
-module [feed-syncer].
-
-Under here we also need to handle bendy butt over EBT (another EBT
-instance as this is binary) and [getIndexFeed] RPC method for
-efficiently getting an index feed including the linked messages:
-[ssb-meta-feeds-rpc].
+https://github.com/ssb-ngi-pointer/ssb-replication-scheduler/pull/5
 
 ### Netsim tests
 
@@ -57,7 +43,7 @@ feeds.
 ### Example app
 
 - meta feeds explorer
-- browser demo (codename 8K)
+- DONE browser demo https://github.com/ssb-ngi-pointer/8k-demo
 
 ### Fusion identity (Stretch goal)
 
@@ -81,7 +67,7 @@ Related work:
 
 ### Network identity? (Stretch goal)
 
-Maybe: https://github.com/ssb-ngi-pointer/ssb-secure-partial-replication-spec/pull/5#issuecomment-892221314
+https://github.com/ssb-ngi-pointer/ssb-network-identity-spec
 
 ## DONE
 
