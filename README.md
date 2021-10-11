@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021 Anders Rune Jensen
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # SSB-JS partial replication implementation notes
 
 This document consists of loose thoughts about how to structure an
